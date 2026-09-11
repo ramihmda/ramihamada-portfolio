@@ -1,3 +1,8 @@
-- org: The University of Texas at Austin
-  period: "B.S. Electrical and Computer Engineering, Minor in Robotics -- Expected December 2027"
+# org    -> school name, bold
+# title  -> the degree, shown beside the school name
+# period -> dates, small grey line underneath
+# detail -> optional paragraph; leave it out entirely if you don't want one
 
+- org: The University of Texas at Austin
+  title: B.S. Electrical and Computer Engineering, Minor in Robotics
+  period: "Expected December 2027"
