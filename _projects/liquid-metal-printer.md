@@ -124,3 +124,27 @@ can be read directly against the mechanical deformation that caused it.
   <figcaption>The characterization rig. A Dynamixel actuator applies a controlled
   stretch while force and resistance are logged in sync.</figcaption>
 </figure>
+
+## Where the sensors end up
+
+The fabrication work exists to serve an application. These soft strain sensors go
+into inflatable tactile sensing balloons that ride along a colonoscope. Inflated,
+a balloon presses against the colon wall, and the strain response registers a
+change in stiffness where a polyp sits. Colonoscopy is otherwise a purely visual
+procedure, so this is about adding a sense of touch to it.
+
+<!-- Figure from the published paper. Add a credit line to the caption before
+     this goes in front of anyone who might recognise it. -->
+<figure>
+  <img src="{{ '/assets/images/tactile_balloon.jpg' | relative_url }}"
+       alt="A colonoscope fitted with two inflatable strain-sensing balloons, one inflated and one deflated, inside a colon with polyps."
+       loading="lazy" width="660" height="295">
+  <figcaption>Two sensing balloons on a colonoscope, one inflated and one
+  deflated. The controllable distal end steers; the balloons do the feeling.</figcaption>
+</figure>
+
+That application is also what sets the requirements I was tuning against. Balloon
+geometry changes between designs, which is the argument against cutting mold
+tooling every time. And a trace has to stay continuous through repeated inflation,
+which is what the pressure sweeps and the characterization rig were really
+checking for.
