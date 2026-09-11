@@ -209,7 +209,7 @@ button:focus-visible {
 }
 
 .worklist__summary {
-  max-width: 34rem;
+  max-width: var(--measure);
   color: var(--ink-mid);
   font-size: 0.9375rem;
   line-height: 1.55;
@@ -253,7 +253,7 @@ button:focus-visible {
   color: var(--ink-mid);
   font-size: 0.9375rem;
   line-height: 1.55;
-  max-width: 34rem;
+  max-width: var(--measure);
 }
 
 .rolelist__period {
@@ -286,7 +286,7 @@ button:focus-visible {
 }
 
 .project__title {
-  max-width: 22ch;
+  max-width: var(--measure);
   font-size: 2.25rem;
   letter-spacing: -0.025em;
   margin-bottom: 0.85rem;
