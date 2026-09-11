@@ -136,7 +136,7 @@ procedure, so this is about adding a sense of touch to it.
 <!-- Figure from the published paper. Add a credit line to the caption before
      this goes in front of anyone who might recognise it. -->
 <figure>
-  <img src="{{ '/assets/images/tactile_balloon.jpg' | relative_url }}"
+  <img src="{{ '/assets/images/sensor_diagram.jpg' | relative_url }}"
        alt="A colonoscope fitted with two inflatable strain-sensing balloons, one inflated and one deflated, inside a colon with polyps."
        loading="lazy" width="660" height="295">
   <figcaption>Two sensing balloons on a colonoscope, one inflated and one
