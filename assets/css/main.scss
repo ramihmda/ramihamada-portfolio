@@ -20,8 +20,12 @@
   --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
 
   --wrap:    64rem;
-  --measure: 38rem;
-  --figure:  46rem;
+
+  /* Prose fills the full column, so text wraps at the same right edge as the
+     header and footer. To shorten the lines, narrow --wrap (52rem is a
+     comfortable reading width); everything stays aligned automatically. */
+  --measure: 100%;
+  --figure:  100%;
 }
 
 
@@ -324,39 +328,6 @@ button:focus-visible {
 }
 
 
-/* Headline measurements --------------------------------------------------- */
-
-.measures {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  max-width: var(--figure);
-  padding: 1.4rem 0;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--rule);
-  margin-bottom: 3rem;
-}
-
-.measures__item {
-  display: flex;
-  flex-direction: column-reverse;
-  gap: 0.15rem;
-}
-
-.measures__value {
-  font-variant-numeric: tabular-nums;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
-.measures__label {
-  color: var(--ink-soft);
-  font-size: 0.8125rem;
-}
-
-
 /* ==========================================================================
    Prose
    ========================================================================== */
@@ -541,9 +512,6 @@ button:focus-visible {
     grid-template-columns: minmax(0, 1fr);
     gap: 0.15rem;
   }
-
-  .measures { gap: 1.5rem 2rem; }
-  .measures__value { font-size: 1.3125rem; }
 
   .prose { font-size: 1.0625rem; }
   .prose .figure-pair { grid-template-columns: 1fr; }

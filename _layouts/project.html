@@ -11,17 +11,6 @@ layout: default
   <p class="project__summary">{{ page.summary }}</p>
   {%- endif %}
 
-  {%- if page.specs %}
-  <dl class="measures">
-    {%- for spec in page.specs %}
-    <div class="measures__item">
-      <dt class="measures__label">{{ spec.label | escape }}</dt>
-      <dd class="measures__value">{{ spec.value | escape }}</dd>
-    </div>
-    {%- endfor %}
-  </dl>
-  {%- endif %}
-
   <dl class="factsheet">
     {%- if page.stack %}
     <div class="factsheet__row">

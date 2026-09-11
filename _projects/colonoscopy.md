@@ -9,13 +9,6 @@ summary: >-
 stack: ROS, Jetson Nano, C++, Python, Dynamixel, NDI Aurora, Tailscale
 role: Software, ARTS Lab
 status: Completed
-specs:
-  - label: Actuated axes
-    value: 4
-  - label: Tip tracking
-    value: 6 DOF, magnetic
-  - label: Compute
-    value: Jetson Nano
 ---
 
 Driving a colonoscope by hand is physically demanding, and the operator is doing
@@ -23,12 +16,15 @@ it while also reading what is on the screen. The idea behind this platform is to
 motorize the scope's degrees of freedom so that navigation becomes an input
 problem rather than a strength problem.
 
+<!-- Figure from the published paper. Add a credit line to the caption
+     before this goes in front of anyone who might recognise it. -->
 <figure>
-  <img src="{{ '/assets/images/colon_setup.jpg' | relative_url }}"
-       alt="The colonoscopy robot test setup, with the actuation system, phantom colon, NDI Aurora field generator, and tip camera."
-       loading="lazy" width="816" height="460">
-  <figcaption>The full bench setup: actuation, the test environment, the Aurora
-  field generator, and the scope's tip camera.</figcaption>
+  <img src="{{ '/assets/images/colonoscope_system.jpg' | relative_url }}"
+       alt="Schematic of the robotic colonoscope: control handle gripping mechanism, feeder mechanism, Xbox controller, and operator screen."
+       loading="lazy" width="1280" height="720">
+  <figcaption>The platform. A commercial colonoscope keeps its own optics and
+  channels. A gripping mechanism on the control handle steers the tip, a feeder
+  drives insertion and retraction, and both map to an Xbox controller.</figcaption>
 </figure>
 
 ## Control and teleoperation
@@ -42,6 +38,14 @@ I also set up Tailscale on the robot and drove it over a remote connection to se
 how teleoperation held up outside the lab network. Latency is the thing that
 degrades first, and it shows up in how you steer long before it shows up in any
 log.
+
+<figure>
+  <img src="{{ '/assets/images/colon_setup.jpg' | relative_url }}"
+       alt="The colonoscopy robot test setup, with the actuation system, phantom colon, NDI Aurora field generator, and tip camera."
+       loading="lazy" width="816" height="460">
+  <figcaption>The full bench setup: actuation, the test environment, the Aurora
+  field generator, and the scope's tip camera.</figcaption>
+</figure>
 
 ## Tip tracking
 

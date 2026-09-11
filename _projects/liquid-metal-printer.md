@@ -9,13 +9,6 @@ summary: >-
 stack: ROS 2, Python, wxPython, C/C++ firmware, Prusa i3 MK3S+, Nordson Ultimus V, Dynamixel
 role: Software and controls
 status: Ongoing research, ARTS Lab
-specs:
-  - label: Setup time
-    value: 70% faster
-  - label: ROS 2 nodes
-    value: 3
-  - label: Toolhead
-    value: pneumatic syringe
 ---
 
 The lab makes stretchable strain sensors by putting a conductive liquid metal

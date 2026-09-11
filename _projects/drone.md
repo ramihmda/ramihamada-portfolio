@@ -8,13 +8,6 @@ summary: >-
 stack: ROS 2, PX4, MAVLink, Jetson Orin Nano, OAK-D W, RTAB-Map, TensorRT, C++, Python
 role: Solo build, from part selection through flight test
 status: In progress
-specs:
-  - label: Flight endurance
-    value: 30+ min
-  - label: Odometry rate
-    value: 25 Hz
-  - label: Worst-case TF lag
-    value: <90 ms
 ---
 
 This one is mine start to finish. I chose the parts, designed the mounts,
