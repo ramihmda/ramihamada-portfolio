@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<article class="project wrap">
+
+  <p class="project__back"><a href="{{ '/#work' | relative_url }}">All projects</a></p>
+
+  <h1 class="project__title">{{ page.title }}</h1>
+  {%- if page.summary %}
+  <p class="project__summary">{{ page.summary }}</p>
+  {%- endif %}
+
+  {%- if page.specs %}
+  <dl class="measures">
+    {%- for spec in page.specs %}
+    <div class="measures__item">
+      <dt class="measures__label">{{ spec.label | escape }}</dt>
+      <dd class="measures__value">{{ spec.value | escape }}</dd>
+    </div>
+    {%- endfor %}
+  </dl>
+  {%- endif %}
+
+  <dl class="factsheet">
+    {%- if page.stack %}
+    <div class="factsheet__row">
+      <dt class="factsheet__label">Built with</dt>
+      <dd class="factsheet__value">{{ page.stack }}</dd>
+    </div>
+    {%- endif %}
+    {%- if page.role %}
+    <div class="factsheet__row">
+      <dt class="factsheet__label">My role</dt>
+      <dd class="factsheet__value">{{ page.role }}</dd>
+    </div>
+    {%- endif %}
+    {%- if page.status %}
+    <div class="factsheet__row">
+      <dt class="factsheet__label">Status</dt>
+      <dd class="factsheet__value">{{ page.status }}</dd>
+    </div>
+    {%- endif %}
+  </dl>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+</article>

@@ -1,0 +1,576 @@
+---
+# Front matter tells Jekyll to process this file.
+---
+
+/* ==========================================================================
+   Tokens
+   ========================================================================== */
+
+:root {
+  --paper:      #fafaf9;
+  --white:      #ffffff;
+  --ink:        #16212b;
+  --ink-mid:    #55626d;
+  --ink-soft:   #656f79;
+  --rule:       #e4e3df;
+  --rule-soft:  #efeeea;
+  --accent:     #2b50c8;
+
+  --sans:  "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+
+  --wrap:    64rem;
+  --measure: 38rem;
+  --figure:  46rem;
+}
+
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+p { margin: 0; }
+
+ul { margin: 0; padding: 0; list-style: none; }
+
+dl, dt, dd { margin: 0; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10;
+  padding: 0.6rem 1rem;
+  background: var(--ink);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+
+/* ==========================================================================
+   Masthead
+   ========================================================================== */
+
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.masthead__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  padding-block: 1.15rem;
+}
+
+.masthead__name {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.masthead__name:hover { color: var(--accent); }
+
+.masthead__nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.masthead__nav a {
+  color: var(--ink-mid);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.masthead__nav a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+
+/* ==========================================================================
+   Section headings
+   ========================================================================== */
+
+.page-top { padding-top: 4rem; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.section-heading {
+  margin-bottom: 0.9rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ink-mid);
+  letter-spacing: 0;
+}
+
+
+/* ==========================================================================
+   Work list
+   ========================================================================== */
+
+.worklist {
+  border-top: 1px solid var(--rule);
+  margin-inline: -1rem;
+  margin-bottom: 4rem;
+}
+
+.worklist__item { border-bottom: 1px solid var(--rule); }
+
+.worklist__link {
+  display: block;
+  padding: 1.9rem 1rem;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.worklist__link:hover,
+.worklist__link:focus-visible {
+  background: var(--white);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.worklist__link:hover .worklist__title { color: var(--accent); }
+
+.worklist__body { min-width: 0; }
+
+.worklist__title {
+  font-size: 1.3125rem;
+  margin-bottom: 0.4rem;
+  transition: color 0.12s ease;
+}
+
+.worklist__summary {
+  max-width: 34rem;
+  color: var(--ink-mid);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+
+/* ==========================================================================
+   Experience
+   ========================================================================== */
+
+.rolelist {
+  border-top: 1px solid var(--rule);
+  margin-inline: -1rem;
+  margin-bottom: 4rem;
+}
+
+.rolelist__item {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.rolelist__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.rolelist__org {
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+
+.rolelist__title {
+  color: var(--ink-mid);
+  font-size: 0.9375rem;
+}
+
+.rolelist__detail {
+  color: var(--ink-mid);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  max-width: 34rem;
+}
+
+.rolelist__period {
+  margin-top: 0.35rem;
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+}
+
+
+/* ==========================================================================
+   Project page
+   ========================================================================== */
+
+.project { padding-block: 2.5rem 4rem; }
+
+.project__back {
+  margin-bottom: 2.5rem;
+  font-size: 0.875rem;
+}
+
+.project__back a {
+  color: var(--ink-mid);
+  text-decoration: none;
+}
+
+.project__back a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.project__title {
+  max-width: 22ch;
+  font-size: 2.25rem;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.85rem;
+}
+
+.project__summary {
+  max-width: var(--measure);
+  color: var(--ink-mid);
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
+}
+
+
+/* Built with / role / status ---------------------------------------------- */
+
+.factsheet {
+  max-width: var(--figure);
+  border-top: 1px solid var(--rule);
+  margin-bottom: 2.5rem;
+}
+
+.factsheet__row {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.factsheet__label {
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+}
+
+.factsheet__value {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+
+/* Headline measurements --------------------------------------------------- */
+
+.measures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  max-width: var(--figure);
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 3rem;
+}
+
+.measures__item {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.15rem;
+}
+
+.measures__value {
+  font-variant-numeric: tabular-nums;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.measures__label {
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+}
+
+
+/* ==========================================================================
+   Prose
+   ========================================================================== */
+
+.prose {
+  max-width: var(--figure);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.68;
+}
+
+.prose {
+  font-variant-numeric: normal;
+}
+
+.prose > p,
+.prose > ul,
+.prose > ol,
+.prose > blockquote {
+  max-width: var(--measure);
+}
+
+.prose p { margin-bottom: 1.15rem; }
+
+.prose h2 {
+  font-family: var(--sans);
+  font-size: 1.25rem;
+  margin-top: 3rem;
+  margin-bottom: 0.85rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.prose h3 {
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose ul {
+  margin-bottom: 1.15rem;
+  padding-left: 1.1rem;
+  list-style: none;
+}
+
+.prose li {
+  position: relative;
+  margin-bottom: 0.6rem;
+}
+
+.prose li::before {
+  content: "";
+  position: absolute;
+  left: -1.1rem;
+  top: 0.72em;
+  width: 0.35rem;
+  height: 1px;
+  background: var(--ink-soft);
+}
+
+.prose strong { font-weight: 600; }
+
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.prose code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background: var(--rule-soft);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+}
+
+
+/* Figures ----------------------------------------------------------------- */
+
+.prose figure {
+  margin: 2.5rem 0 2.75rem;
+}
+
+.prose figure img {
+  width: 100%;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: var(--white);
+}
+
+.prose figcaption {
+  max-width: var(--measure);
+  margin-top: 0.7rem;
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.prose .figure-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 2.5rem 0 2.75rem;
+}
+
+.prose .figure-pair figure { margin: 0; }
+
+.video {
+  width: 100%;
+  max-width: var(--figure);
+  aspect-ratio: 16 / 9;
+  margin: 2.5rem 0 2.75rem;
+}
+
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 2px;
+}
+
+
+/* ==========================================================================
+   Colophon
+   ========================================================================== */
+
+.colophon {
+  border-top: 1px solid var(--rule);
+  padding-block: 2rem 3rem;
+}
+
+.colophon__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+}
+
+.colophon__line {
+  font-size: 0.875rem;
+}
+
+.colophon__line a {
+  color: var(--ink-mid);
+  text-decoration: none;
+}
+
+.colophon__line a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.colophon__line--muted { color: var(--ink-soft); }
+
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 40rem) {
+  .wrap { padding-inline: 1.25rem; }
+
+  .page-top { padding-top: 2.75rem; }
+
+  .worklist,
+  .rolelist { margin-inline: -0.75rem; }
+
+  .worklist__link { padding: 1.5rem 0.75rem; }
+
+  .rolelist__item { padding: 1.35rem 0.75rem; }
+
+  .worklist__title { font-size: 1.1875rem; }
+
+  .project { padding-block: 2rem 3rem; }
+  .project__title { font-size: 1.75rem; }
+  .project__summary { font-size: 1.0625rem; }
+
+  .factsheet__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.15rem;
+  }
+
+  .measures { gap: 1.5rem 2rem; }
+  .measures__value { font-size: 1.3125rem; }
+
+  .prose { font-size: 1.0625rem; }
+  .prose .figure-pair { grid-template-columns: 1fr; }
+}
+
+
+/* ==========================================================================
+   Motion and print
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .masthead__nav,
+  .skip-link,
+  .project__back { display: none; }
+
+  body { background: #fff; }
+
+  .prose figure img { border-color: #ccc; }
+}

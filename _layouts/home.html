@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+
+{%- assign work = site.projects | sort: "order" -%}
+
+<section class="wrap page-top">
+  <h1 class="visually-hidden">{{ site.title }}, {{ site.tagline | downcase }}</h1>
+  <h2 class="section-heading" id="work">Selected work</h2>
+
+  <ul class="worklist">
+    {%- for project in work %}
+    <li class="worklist__item">
+      <a class="worklist__link" href="{{ project.url | relative_url }}">
+        <div class="worklist__body">
+          <h3 class="worklist__title">{{ project.title }}</h3>
+          <p class="worklist__summary">{{ project.summary }}</p>
+        </div>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+{%- if site.data.experience and site.data.experience.size > 0 %}
+<section class="wrap">
+  <h2 class="section-heading" id="experience">Experience</h2>
+
+  <ul class="rolelist">
+    {%- for role in site.data.experience %}
+    <li class="rolelist__item">
+      <div class="rolelist__head">
+        <span class="rolelist__org">{{ role.org }}</span>
+        <span class="rolelist__title">{{ role.title }}</span>
+      </div>
+      <p class="rolelist__detail">{{ role.detail }}</p>
+      {%- if role.period %}<p class="rolelist__period">{{ role.period }}</p>{%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}

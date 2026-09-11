@@ -1,0 +1,15 @@
+# Add a `period:` line to either entry when you want dates shown,
+# e.g.  period: "May 2025 to present"
+
+- org: Silicon Audio
+  title: Embedded firmware intern
+  detail: >-
+    Firmware for a seismic digitizer platform. Sensor pipelines on STM32 under
+    FreeRTOS, SPI and I2C peripheral bring-up, GPS-disciplined timing, and
+    on-device data logging.
+
+- org: ARTS Lab, UT Austin
+  title: Undergraduate researcher
+  detail: >-
+    ROS 2 software for surgical robotics and bioprinting platforms: motion
+    control, hardware integration, and automated characterization.

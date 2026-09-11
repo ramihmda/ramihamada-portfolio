@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  {%- include head.html -%}
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="masthead__name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="masthead__nav" aria-label="Elsewhere">
+      <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+      <a href="{{ site.linkedin_url }}">LinkedIn</a>
+      <a href="mailto:{{ site.email }}">Email</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  {{ content }}
+</main>
+
+<footer class="colophon">
+  <div class="wrap colophon__inner">
+    <p class="colophon__line">
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </p>
+    <p class="colophon__line colophon__line--muted">
+      Austin, Texas
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

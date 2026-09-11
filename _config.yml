@@ -1,0 +1,43 @@
+title: Rami Hamada
+tagline: Embedded firmware and robotics
+description: >-
+  Rami Hamada builds embedded firmware and autonomous robotics systems.
+  Electrical and computer engineering at UT Austin.
+url: "https://ramihamada.com"
+baseurl: ""
+lang: en
+
+email: rhamada@utexas.edu
+github_username: ramihmda
+linkedin_url: "https://www.linkedin.com/in/rami-h-91133927a/"
+
+collections:
+  projects:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
