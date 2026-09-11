@@ -35,7 +35,26 @@ layout: default
         <span class="rolelist__title">{{ role.title }}</span>
       </div>
       <p class="rolelist__detail">{{ role.detail }}</p>
-      {%- if role.period %}<p class="rolelist__period">{{ role.period }}</p>{%- endif %}
+      {%- if role.period and role.period != '' %}<p class="rolelist__period">{{ role.period }}</p>{%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+
+{%- if site.data.education and site.data.education.size > 0 %}
+<section class="wrap">
+  <h2 class="section-heading" id="education">Education</h2>
+
+  <ul class="rolelist">
+    {%- for school in site.data.education %}
+    <li class="rolelist__item">
+      <div class="rolelist__head">
+        <span class="rolelist__org">{{ school.org }}</span>
+        <span class="rolelist__title">{{ school.title }}</span>
+      </div>
+      <p class="rolelist__detail">{{ school.detail }}</p>
+      {%- if school.period and school.period != '' %}<p class="rolelist__period">{{ school.period }}</p>{%- endif %}
     </li>
     {%- endfor %}
   </ul>

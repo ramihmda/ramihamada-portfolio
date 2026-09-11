@@ -1,0 +1,15 @@
+# `period` is optional. Fill in your expected graduation and this renders
+# under the entry; leave it out and nothing shows.
+#   period: "Expected May 2028"
+
+- org: The University of Texas at Austin
+  title: BSE/MSE, Electrical and Computer Engineering
+  detail: >-
+    Integrated bachelor's and master's track in Decision, Information, and
+    Communications Engineering, with a robotics minor. Coursework in signals
+    and systems, probability and random processes, embedded systems, and
+    computer architecture.
+
+- org: St. Edward's University
+  title: Computer Science
+  detail: Transferred to UT Austin.

@@ -9,6 +9,7 @@ _config.yml              site settings
 index.md                 front page (front matter only, no body copy)
 _projects/*.md           one file per project, becomes a page
 _data/experience.yml     the Experience list
+_data/education.yml      the Education list
 _layouts/                default, home, project
 _includes/head.html      meta, fonts, stylesheet
 assets/css/main.scss     all styling, single file
