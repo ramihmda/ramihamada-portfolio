@@ -21,6 +21,12 @@ the link back down to the flight controller, runs in ROS 2 on the Jetson.
 Most of the hard problems so far have been transport and timing, not algorithms.
 That surprised me less than it probably should have.
 
+<figure>
+  <img src="{{ '/assets/images/drone_build.jpg' | relative_url }}"
+       alt="The assembled quadrotor: Holybro X500 frame with the stereo camera mounted below the front and the Jetson enclosure between the plates."
+       loading="lazy" width="1600" height="1038">
+</figure>
+
 ## Architecture
 
 The onboard stack is split into separate ROS 2 components for sensing,
@@ -42,6 +48,20 @@ are my own, modeled in Fusion 360 and printed.
 I flew it manually and tuned it before adding any autonomy, which turned out to
 matter. Getting comfortable with the aircraft as an aircraft made the later
 debugging much less nerve-racking. It holds more than 30 minutes on a charge.
+
+<div class="figure-pair">
+  <figure>
+    <img src="{{ '/assets/images/jetson_case.png' | relative_url }}"
+         alt="Printed enclosure for the Jetson Orin Nano, with a lattice shell and a vented top plate."
+         loading="lazy" width="1268" height="758">
+  </figure>
+  <figure>
+    <img src="{{ '/assets/images/camera_mount.png' | relative_url }}"
+         alt="Printed bracket that clamps the stereo camera to the frame's forward tubes."
+         loading="lazy" width="990" height="550">
+  </figure>
+</div>
+<p class="figure-note">Jetson enclosure and camera bracket. Both printed.</p>
 
 ## Visual-inertial odometry
 
