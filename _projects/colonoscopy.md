@@ -3,66 +3,52 @@ title: Colonoscopy Robot
 permalink: /projects/colonoscopy/
 order: 3
 summary: >-
-  A 4-axis robotic colonoscopy platform built to take physical effort out of
-  scope navigation. I built the teleoperation, the tip tracking, and the
-  operator's live view.
+  A 4-axis robotic colonoscopy platform with teleoperation, electromagnetic
+  tip tracking, and an integrated operator interface.
 stack: ROS, Jetson Nano, C++, Python, Dynamixel, NDI Aurora, Tailscale
-role: Software, ARTS Lab
+role: Software and controls, ARTS Lab
 status: Completed
 ---
 
-Driving a colonoscope by hand is physically demanding, and the operator is doing
-it while also reading what is on the screen. The idea behind this platform is to
-motorize the scope's degrees of freedom so that navigation becomes an input
-problem rather than a strength problem.
+I developed the control and sensing software for a robotic colonoscopy platform that motorizes the primary motions used during scope navigation.
 
-<!-- Figure from the published paper. Add a credit line to the caption
-     before this goes in front of anyone who might recognise it. -->
+The system uses Dynamixel actuators controlled by a Jetson Nano, with ROS coordinating teleoperation, electromagnetic tip tracking, remote operation, and the live operator interface.
+
 <figure>
   <img src="{{ '/assets/images/colonoscope_system.jpg' | relative_url }}"
-       alt="Schematic of the robotic colonoscope: control handle gripping mechanism, feeder mechanism, Xbox controller, and operator screen."
+       alt="Schematic of the robotic colonoscope, including the control-handle mechanism, feeder mechanism, Xbox controller, and operator display."
        loading="lazy" width="1280" height="720">
-  <figcaption>The platform. A commercial colonoscope keeps its own optics and
-  channels. A gripping mechanism on the control handle steers the tip, a feeder
-  drives insertion and retraction, and both map to an Xbox controller.</figcaption>
+  <figcaption>
+    Robotic colonoscope system. Figure from M. R. Javazm et al.,
+    “Analytical Design and Development of a Modular and Intuitive Framework for
+    Robotizing and Enhancing the Existing Colonoscopy Procedures,”
+    <em>Journal of Medical Devices</em>, 2026.
+  </figcaption>
 </figure>
 
-## Control and teleoperation
+## Control and Teleoperation
 
-Everything runs on a Jetson Nano. Four motorized degrees of freedom are driven
-through a Dynamixel stack, and the operator holds an Xbox controller. I mapped
-the controller inputs into the motor commands and used ROS to tie actuation,
-sensing, and visualization together.
+The robot uses four motorized axes driven through Dynamixel actuators. I mapped Xbox controller inputs to robot motion commands and integrated actuation and system state through ROS.
 
-I also set up Tailscale on the robot and drove it over a remote connection to see
-how teleoperation held up outside the lab network. Latency is the thing that
-degrades first, and it shows up in how you steer long before it shows up in any
-log.
+This gave the operator direct control over the robot's steering and scope motion from a handheld controller rather than manually manipulating the colonoscope handle.
+
+I also configured remote access using Tailscale and tested teleoperation outside the local lab network. This allowed remote operation while preserving access to the live camera feed and robot state.
 
 <figure>
   <img src="{{ '/assets/images/colon_setup.jpg' | relative_url }}"
-       alt="The colonoscopy robot test setup, with the actuation system, phantom colon, NDI Aurora field generator, and tip camera."
+       alt="Colonoscopy robot test setup with the robotic actuation system, phantom colon, NDI Aurora field generator, and tip camera."
        loading="lazy" width="816" height="460">
-  <figcaption>The full bench setup: actuation, the test environment, the Aurora
-  field generator, and the scope's tip camera.</figcaption>
+  <figcaption>Experimental setup with robotic actuation, the colon phantom, electromagnetic tracking, and the live scope camera.</figcaption>
 </figure>
 
-## Tip tracking
+## Tip Tracking
 
-An NDI Aurora electromagnetic tracker reports the position and orientation of the
-scope tip in real time, which matters because the tip is inside something opaque
-and the camera view alone does not tell you where you are.
+I integrated an NDI Aurora electromagnetic tracking system to measure the position and orientation of the colonoscope tip during navigation.
 
-Tracking data is logged alongside the experiment data and the video on the same
-timeline, so a run can be replayed afterward and the scope's actual path through
-the phantom reconstructed rather than guessed at.
+The tracker provides an external estimate of the scope's motion inside the phantom, where the camera image alone does not provide the tip's global position. Tracking data can be recorded alongside the experimental data to reconstruct and analyze the path taken during a trial.
 
-## The operator's view
+## Operator Interface
 
-A miniature camera at the scope tip gives the live view during navigation. I
-pulled that stream into the same interface as the controls, so the operator is
-not switching attention between two screens while steering.
+I integrated the live camera feed and robot controls into a common operator view so that navigation and system monitoring could be handled from the same interface.
 
-The tumor-detection model is another researcher's work, not mine. My part was the
-plumbing: getting the camera feed and the detections into one view the operator
-is already looking at.
+The project also included a tumor-detection model developed by another researcher. My contribution was integrating its detection output with the live endoscopic video so the results could be displayed directly in the operator interface during experiments.
