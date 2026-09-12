@@ -22,7 +22,7 @@ Most of the hard problems so far have been transport and timing, not algorithms.
 That surprised me less than it probably should have.
 
 <figure>
-  <img src="{{ '/assets/images/drone_build.jpg' | relative_url }}"
+  <img src="{{ '/assets/images/drone_picture.jpg' | relative_url }}"
        alt="The assembled quadrotor: Holybro X500 frame with the stereo camera mounted below the front and the Jetson enclosure between the plates."
        loading="lazy" width="1600" height="1038">
 </figure>
