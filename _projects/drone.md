@@ -45,10 +45,6 @@ Part selection covered the flight controller, companion computer, stereo camera,
 RC receiver, telemetry radio, propulsion, and power. The Jetson and camera mounts
 are my own, modeled in Fusion 360 and printed.
 
-I flew it manually and tuned it before adding any autonomy, which turned out to
-matter. Getting comfortable with the aircraft as an aircraft made the later
-debugging much less nerve-racking. It holds more than 30 minutes on a charge.
-
 <div class="figure-pair">
   <figure>
     <img src="{{ '/assets/images/jetson_case.png' | relative_url }}"
@@ -61,7 +57,10 @@ debugging much less nerve-racking. It holds more than 30 minutes on a charge.
          loading="lazy" width="990" height="550">
   </figure>
 </div>
-<p class="figure-note">Jetson enclosure and camera bracket. Both printed.</p>
+
+I flew it manually and tuned it before adding any autonomy, which turned out to
+matter. Getting comfortable with the aircraft as an aircraft made the later
+debugging much less nerve-racking. It holds more than 30 minutes on a charge.
 
 ## Visual-inertial odometry
 
