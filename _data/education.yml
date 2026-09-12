@@ -3,6 +3,9 @@
 # period -> dates, small grey line underneath
 # detail -> optional paragraph; leave it out entirely if you don't want one
 
+# Education
+
 - org: The University of Texas at Austin
-  title: B.S. Electrical and Computer Engineering, Minor in Robotics
-  period: "Expected December 2027"
+  title: B.S. Electrical & Computer Engineering · Minor in Robotics
+  period: "Expected Dec. 2027"
+  detail: "GPA: 3.78 / 4.00"
