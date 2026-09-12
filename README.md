@@ -1,7 +1,3 @@
-# ramihamada.com
-
-Personal portfolio. Plain Jekyll, no external theme, builds on GitHub Pages.
-
 ## Structure
 
 ```
@@ -62,8 +58,3 @@ bundle exec jekyll serve --livereload
 ```
 
 Then open http://localhost:4000.
-
-## Deploying
-
-Push to `master`. GitHub Pages builds it. Check
-Settings > Pages to confirm the source branch.
