@@ -34,10 +34,14 @@ layout: default
         <span class="rolelist__org">{{ role.org }}</span>
         <span class="rolelist__title">{{ role.title }}</span>
       </div>
+    
+      {%- if role.period and role.period != '' %}
+      <p class="rolelist__period">{{ role.period }}</p>
+      {%- endif %}
+    
       {%- if role.detail and role.detail != '' %}
       <p class="rolelist__detail">{{ role.detail }}</p>
       {%- endif %}
-      {%- if role.period and role.period != '' %}<p class="rolelist__period">{{ role.period }}</p>{%- endif %}
     </li>
     {%- endfor %}
   </ul>
@@ -55,10 +59,14 @@ layout: default
         <span class="rolelist__org">{{ school.org }}</span>
         <span class="rolelist__title">{{ school.title }}</span>
       </div>
+    
+      {%- if school.period and school.period != '' %}
+      <p class="rolelist__period">{{ school.period }}</p>
+      {%- endif %}
+    
       {%- if school.detail and school.detail != '' %}
       <p class="rolelist__detail">{{ school.detail }}</p>
       {%- endif %}
-      {%- if school.period and school.period != '' %}<p class="rolelist__period">{{ school.period }}</p>{%- endif %}
     </li>
     {%- endfor %}
   </ul>
