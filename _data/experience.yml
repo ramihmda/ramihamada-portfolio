@@ -1,15 +1,17 @@
-# Add a `period:` line to either entry when you want dates shown,
-# e.g.  period: "May 2025 to present"
+# Experience
 
 - org: Silicon Audio
-  title: Embedded firmware intern
+  title: Embedded Systems Engineering Intern
+  period: "May 2026 – Aug. 2026"
   detail: >-
-    Firmware for a seismic digitizer platform. Sensor pipelines on STM32 under
-    FreeRTOS, SPI and I2C peripheral bring-up, GPS-disciplined timing, and
-    on-device data logging.
+    Embedded firmware and Linux software for a seismic acquisition system,
+    spanning STM32/FreeRTOS sensor acquisition, real-time data transport,
+    hardware debugging, and system validation.
 
 - org: ARTS Lab, UT Austin
-  title: Undergraduate researcher
+  title: Undergraduate Research Assistant
+  period: "Aug. 2024 – Apr. 2026"
   detail: >-
-    ROS 2 software for surgical robotics and bioprinting platforms: motion
-    control, hardware integration, and automated characterization.
+    ROS 2 software and controls for surgical robotics and liquid-metal sensor
+    fabrication, including hardware integration, motion control, firmware,
+    and automated experimentation.
