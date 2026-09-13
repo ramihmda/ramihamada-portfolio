@@ -35,11 +35,18 @@ I selected and integrated the flight controller, companion computer, stereo came
     <img src="{{ '/assets/images/jetson_case.png' | relative_url }}"
          alt="Printed enclosure for the Jetson Orin Nano, with a lattice shell and a vented top plate."
          loading="lazy" width="1268" height="758">
+    <figcaption>
+      Custom Jetson Orin Nano enclosure designed for lightweight mounting and airflow.
+    </figcaption>
   </figure>
+
   <figure>
     <img src="{{ '/assets/images/camera_mount.png' | relative_url }}"
          alt="Printed bracket that clamps the stereo camera to the frame's forward tubes."
          loading="lazy" width="990" height="550">
+    <figcaption>
+      Custom OAK-D W mount for rigid forward-facing placement on the X500 frame.
+    </figcaption>
   </figure>
 </div>
 
