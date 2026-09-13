@@ -59,8 +59,15 @@ During testing, I found that the VIO odometry remained current while its corresp
 
 I isolated the problem to the TF publication path and replaced it with a ROS 2 bridge that publishes each transform directly from the corresponding odometry sample using the same timestamp. Worst-case observed lag dropped from 2.45 seconds to under 90 milliseconds, and the following test completed a clean 44-node SLAM run without the previous transform extrapolation failures.
 
-## Onboard perception and FPV
+## Onboard Perception and FPV
 
 The OAK-D W produces a dedicated 1920×1440, 30 fps H.264 FPV stream using its hardware encoder. The Jetson forwards the encoded stream to QGroundControl without decoding and re-encoding it, leaving its GPU available for perception and autonomy workloads.
 
 Object detection runs onboard with an FP16 TensorRT model at 640×480. I also modified QGroundControl to receive the detection output and draw the results directly over the live FPV feed, keeping perception output in the same interface used for vehicle telemetry and flight monitoring.
+
+<figure>
+  <img src="{{ '/assets/images/qgc_overlay.webp' | relative_url }}"
+       alt="QGroundControl displaying live TensorRT object detections over the drone's FPV video stream."
+       loading="lazy" width="1920" height="1200">
+  <figcaption>Live TensorRT detections overlaid on the FPV stream in QGroundControl.</figcaption>
+</figure>
